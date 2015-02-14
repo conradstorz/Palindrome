@@ -1,18 +1,18 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python 
+#python 2
 
 """
 	A simple module for testing the isPalindrome(string) code.
 """
 
-#from string import * #for Jaysen's function
+
 import string
+
 def isPalindrome_Jaysen(s):
-	s = s.upper()
-	# error trapped by Python interpreter
-	#	s = s.translate(string.maketrans("", ""), string.punctuation + string.whitespace)
-	#AttributeError: 'module' object has no attribute 'maketrans'
-	#	I still can't find the error in this code. -Conrad
-	return s == s[::-1]
+    s = s.upper()
+    s = s.translate(
+        string.maketrans("", ""), string.punctuation + string.whitespace)
+    return s == s[::-1]
 
 def isPalindrome_Storz(s):
 	upcase = s.upper()
@@ -37,7 +37,7 @@ def isPalindrome_Dmitry(s):
         return s[:half - 1] == s[:half:-1]
     else:
         return s[:half] + s[half + 1] == s[:half:-1] + s[half + 1]
-		
+
 def runTests():
 
 	"""
